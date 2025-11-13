@@ -1,6 +1,6 @@
 -- put wezterm api
 local wezterm = require("wezterm")
-local mux = wezterm.mux
+-- local mux = wezterm.mux
 local config = wezterm.config_builder()
 
 -- wezterm.on("gui-startup", function(cmd)
@@ -15,6 +15,8 @@ config.color_scheme = "Catppuccin Mocha"
 
 config.font = wezterm.font("JetBrainsMono Nerd Font")
 config.font_size = 15
+
+config.warn_about_missing_glyphs = false
 
 config.initial_rows = 100
 config.initial_cols = 205
