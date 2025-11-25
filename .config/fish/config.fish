@@ -17,6 +17,9 @@ if status is-interactive
     # LazyDocker
     set -gx PATH $HOME/.local/bin $PATH
 
+    # Bat
+    set -x BAT_THEME "Catppuccin Mocha"
+
     # Inicializar zoxide si está instalado
     if type -q zoxide
         zoxide init fish | source
