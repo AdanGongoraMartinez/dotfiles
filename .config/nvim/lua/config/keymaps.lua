@@ -1,6 +1,3 @@
--- Keymaps are automatically loaded on the VeryLazy event
--- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
-
 -- Mapeos para moverte entre ventanas (splits) en Modo Normal (n)
 vim.keymap.set("n", "<C-Left>", "<C-w>h", { desc = "Moverse a la ventana izquierda" })
 vim.keymap.set("n", "<C-Down>", "<C-w>j", { desc = "Moverse a la ventana inferior" })
