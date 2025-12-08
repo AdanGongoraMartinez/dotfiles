@@ -9,3 +9,6 @@ vim.keymap.set("n", "<A-Left>", "<cmd>vertical resize -2<cr>", { desc = "Disminu
 vim.keymap.set("n", "<A-Right>", "<cmd>vertical resize +2<cr>", { desc = "Aumentar ancho" })
 vim.keymap.set("n", "<A-Up>", "<cmd>resize +2<cr>", { desc = "Aumentar alto" })
 vim.keymap.set("n", "<A-Down>", "<cmd>resize -2<cr>", { desc = "Disminuir alto" })
+
+-- Pegar sin reemplazado
+vim.keymap.set({ "v", "x" }, "p", [["_dP]], { desc = "Pegar sin copiar el texto reemplazado" })
