@@ -3,7 +3,7 @@ if status is-interactive
     fish_vi_key_bindings
 
     # Neovim as editor
-    set -gx EDITOR nvim 
+    set -gx EDITOR nvim
 
     # rust
     set -Ua fish_user_paths $HOME/.cargo/bin
@@ -27,7 +27,7 @@ if status is-interactive
 
     set fzf_fd_opts --hidden --max-depth 5
 
-    abbr --add cl 'clear'
+    abbr --add cl clear
     # Para mostrar iconos y una lista larga con detalles
     abbr --add ls 'eza -lh --icons'
     # Para mostrar iconos, una lista larga y agrupar directorios primero
@@ -37,16 +37,21 @@ if status is-interactive
     # fuzzy find with bat preview
     abbr --add ff "fzf --ansi --preview-window 'right:60%' --preview 'bat --color=always --style=numbers,changes --line-range :500 {}'"
 
+    # tmux
+    abbr --add tn 'tmux new-session -s'
+    abbr --add tl 'tmux list-sessions'
+    abbr --add ta 'tmux attach-session'
+
     # Andriod studio
     abbr --add a-studio '~/android-studio/bin/studio'
 
     function y
-    	set tmp (mktemp -t "yazi-cwd.XXXXXX")
-    	yazi $argv --cwd-file="$tmp"
-    	if read -z cwd < "$tmp"; and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
-    		builtin cd -- "$cwd"
-    	end
-    	rm -f -- "$tmp"
+        set tmp (mktemp -t "yazi-cwd.XXXXXX")
+        yazi $argv --cwd-file="$tmp"
+        if read -z cwd <"$tmp"; and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+            builtin cd -- "$cwd"
+        end
+        rm -f -- "$tmp"
     end
 
     # Tmuxifier
