@@ -29,6 +29,6 @@ allow_hyperlinks yes
 
 
 # BEGIN_KITTY_THEME
-# Gruvbox Dark
+# OneDark-Pro
 include current-theme.conf
 # END_KITTY_THEME
