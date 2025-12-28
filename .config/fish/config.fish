@@ -15,7 +15,7 @@ if status is-interactive
     set -gx PATH $HOME/flutter/bin $PATH
 
     # LazyDocker
-    set -gx PATH $HOME/.local/bin $PATH
+    set -gx PATH $HOME/go/bin/ $PATH
 
     # Bat
     set -x BAT_THEME "Catppuccin Mocha"
@@ -61,3 +61,7 @@ if status is-interactive
     #Starship
     starship init fish | source
 end
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
