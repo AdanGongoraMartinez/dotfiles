@@ -75,6 +75,16 @@ return {
               hint = icons.diagnostics.Hint,
             },
           },
+          {
+            function()
+              local reg = vim.fn.reg_recording()
+              if reg == "" then
+                return ""
+              end
+              return "󰑋 Grabando @" .. reg -- Puedes cambiar el icono
+            end,
+            color = { fg = "#ff9e64", gui = "bold" }, -- Un color naranja/llamativo
+          },
         },
         lualine_x = {
           -- Aquí van los componentes complejos de LazyVim/Snacks (Noice, DAP, Lazy updates, Diff)
@@ -89,7 +99,11 @@ return {
           -- },
         },
         lualine_y = {
-          "progress",
+          function()
+            local current_line = vim.fn.line(".")
+            local total_lines = vim.fn.line("$")
+            return string.format("%d | %d", current_line, total_lines)
+          end,
         },
         lualine_z = {
           { "location", left_padding = 2 },
