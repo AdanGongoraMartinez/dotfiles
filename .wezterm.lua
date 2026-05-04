@@ -11,8 +11,8 @@ config.font_size = 15
 
 config.warn_about_missing_glyphs = false
 
-config.initial_rows = 100
-config.initial_cols = 205
+-- config.initial_rows = 100
+-- config.initial_cols = 205
 
 config.enable_tab_bar = false
 config.window_decorations = "NONE"

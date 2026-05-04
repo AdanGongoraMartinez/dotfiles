@@ -48,6 +48,14 @@ if status is-interactive
     # Andriod studio
     abbr --add a-studio '~/android-studio/bin/studio'
 
+    # update
+    function updateall
+        sudo dnf upgrade --refresh; and flatpak update -y
+    end
+    function cleanup
+        sudo dnf autoremove; and flatpak uninstall --unused -y
+    end
+
     function y
         set tmp (mktemp -t "yazi-cwd.XXXXXX")
         yazi $argv --cwd-file="$tmp"
