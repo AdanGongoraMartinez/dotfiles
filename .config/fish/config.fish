@@ -1,4 +1,6 @@
 if status is-interactive
+    set -g fish_greeting ""
+
     # Modo vi para navegación normal/insertar
     fish_vi_key_bindings
 
