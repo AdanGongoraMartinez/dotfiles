@@ -28,3 +28,5 @@ vim.keymap.set("n", "N", "Nzzzv", { desc = "" })
 -- Mapeos para moverse entre tabs usando p y n
 vim.keymap.set("n", "<leader><tab>p", "<cmd>tabPrevious<cr>", { desc = "Previous Tab" })
 vim.keymap.set("n", "<leader><tab>n", "<cmd>tabNext<cr>", { desc = "Next Tab" })
+
+vim.keymap.set("n", "-", "<cmd>Oil<cr>", { desc = "Oil" })
