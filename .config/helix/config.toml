@@ -1,0 +1,54 @@
+theme = "gruvbox"
+
+[editor]
+line-number = "relative"
+cursorline = true
+color-modes = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.indent-guides]
+render = true
+
+[editor.inline-diagnostics]
+cursor-line = "hint" 
+other-lines = "warning"
+
+[editor.file-picker]
+hidden = false
+
+[editor.soft-wrap]
+enable = true
+
+[keys.normal]
+D = "@vgld"
+C-left = "jump_view_left"
+C-down = "jump_view_down"
+C-up = "jump_view_up"
+"C-right" = "jump_view_right"
+
+"C-s" = ":w"
+"C-q" = ":bc"
+"C-r" = ":reload-all"
+"C-d" = ["page_cursor_half_down", "align_view_center"]
+"C-u" = ["page_cursor_half_up", "align_view_center"]
+
+C-y = [
+  ':sh rm -f /tmp/unique-file',
+  ':insert-output yazi "%{buffer_name}" --chooser-file=/tmp/unique-file',
+  ':sh printf "\x1b[?1049h\x1b[?2004h" > /dev/tty',
+  ':open %sh{cat /tmp/unique-file}',
+  ':redraw',
+]
+
+C-g = [
+    ":write-all", 
+    ":new", 
+    ":insert-output lazygit", 
+    ":buffer-close!", 
+    ":redraw", 
+    ":reload-all"
+]
