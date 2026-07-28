@@ -1,0 +1,6 @@
+binds {
+    Mod+D hotkey-overlay-title="App Launcher: Toggle" { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
+    Super+Alt+Down { focus-workspace-down; }
+    Super+Alt+Up allow-inhibiting=false { focus-workspace-up; }
+    Mod+T hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
+}
