@@ -1,6 +1,7 @@
 theme = "gruvbox"
 
 [editor]
+end-of-line-diagnostics = "hint"
 line-number = "relative"
 cursorline = true
 color-modes = true
@@ -14,8 +15,8 @@ select = "underline"
 render = true
 
 [editor.inline-diagnostics]
-cursor-line = "hint" 
-other-lines = "warning"
+cursor-line = "warning"
+other-lines = "disable"
 
 [editor.file-picker]
 hidden = false
