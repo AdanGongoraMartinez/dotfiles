@@ -1,6 +1,30 @@
 [[language]]
+name = "nix"
+auto-format = true
+language-servers = ["nixd"]
+
+[language.formatter]
+command = "alejandra"
+
+[[language]]
+name = "rust"
+auto-format = true
+language-servers = ["rust-analyzer"]
+
+[language.formatter]
+command = "rustfmt"
+
+[[language]]
+name = "go"
+auto-format = true
+language-servers = ["gopls"]
+
+[language.formatter]
+command = "gofumpt"
+
+[[language]]
 name = "python"
-language-servers = ["ty", "ruff"]
+language-servers = ["ty"]
 auto-format = true
 scope = "source.python"
 
@@ -8,10 +32,135 @@ scope = "source.python"
 command = "ruff"
 args = ["format", "-"]
 
+[[language]]
+name = "typescript"
+auto-format = true
+language-servers = ["typescript-language-server"]
+
+[language.formatter]
+command = "prettier"
+
+[[language]]
+name = "javascript"
+auto-format = true
+language-servers = ["typescript-language-server"]
+
+[language.formatter]
+command = "prettier"
+
+[[language]]
+name = "json"
+auto-format = true
+language-servers = ["vscode-json-language-server"]
+
+[language.formatter]
+command = "prettier"
+
+[[language]]
+name = "html"
+auto-format = true
+language-servers = ["vscode-html-language-server"]
+
+[language.formatter]
+command = "prettier"
+
+[[language]]
+name = "css"
+auto-format = true
+language-servers = ["vscode-css-language-server"]
+
+[language.formatter]
+command = "prettier"
+
+[[language]]
+name = "toml"
+auto-format = true
+language-servers = ["taplo"]
+
+[[language]]
+name = "yaml"
+auto-format = true
+language-servers = ["yaml-language-server"]
+
+[[language]]
+name = "c-sharp"
+auto-format = true
+language-servers = ["omnisharp"]
+
+[[language]]
+name = "dockerfile"
+auto-format = true
+language-servers = ["dockerfile-language-server"]
+
+[[language]]
+name = "bash"
+auto-format = true
+language-servers = ["bash-language-server"]
+
+[[language]]
+name = "awk"
+auto-format = true
+
+[language.formatter]
+command = "awk"
+args = ["--file=/dev/stdin", "--pretty-print=/dev/stdout"]
+
+[[language]]
+name = "markdown"
+auto-format = true
+language-servers = ["marksman"]
+
+[language.formatter]
+command = "prettier"
+args = ["--parser", "markdown"]
+
+[language-server.nixd]
+command = "nixd"
+
+[language-server.rust-analyzer]
+command = "rust-analyzer"
+
+[language-server.gopls]
+command = "gopls"
+
 [language-server.ty]
 command = "ty"
 args = ["server"]
 
-[language-server.ruff]
-command = "ruff"
-args = ["server"]
+[language-server.typescript-language-server]
+command = "typescript-language-server"
+args = ["--stdio"]
+
+[language-server.vscode-json-language-server]
+command = "vscode-json-language-server"
+args = ["--stdio"]
+
+[language-server.vscode-html-language-server]
+command = "vscode-html-language-server"
+args = ["--stdio"]
+
+[language-server.vscode-css-language-server]
+command = "vscode-css-language-server"
+args = ["--stdio"]
+
+[language-server.taplo]
+command = "taplo"
+args = ["lsp", "stdio"]
+
+[language-server.yaml-language-server]
+command = "yaml-language-server"
+args = ["--stdio"]
+
+[language-server.omnisharp]
+command = "omnisharp"
+
+[language-server.dockerfile-language-server]
+command = "dockerfile-language-server"
+args = ["--stdio"]
+
+[language-server.bash-language-server]
+command = "bash-language-server"
+args = ["start"]
+
+[language-server.marksman]
+command = "marksman"
