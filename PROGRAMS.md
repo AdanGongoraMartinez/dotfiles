@@ -71,7 +71,7 @@ gofumpt              # `go install mvdan.cc/gofumpt@latest` en ambas plataformas
 typescript-language-server # npm -g en ambas plataformas
 prettier             # npm -g en ambas plataformas
 vscode-langservers-extracted # npm -g en ambas plataformas
-ty                   # binario (GitHub releases) · brew
+ty                   # binario (GitHub releases) / python installer · brew
 ruff                 # dnf (o `pipx install ruff`) · `pipx install ruff` o brew
 taplo                # `cargo install taplo-cli` o npm en ambas plataformas
 yaml-language-server # npm -g en ambas plataformas
@@ -89,6 +89,7 @@ docker-compose       # dnf · brew (o Docker Desktop)
 ## Fonts
 
 nerd-fonts.hack      # Nix (home-manager) o descarga de nerdfonts.com · brew (cask `font-hack-nerd-font`)
+jetbrains-mono-fonts # dnf · brew
 
 ## Utilidades Linux (GNOME/Wayland)
 
