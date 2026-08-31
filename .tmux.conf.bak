@@ -22,19 +22,53 @@ set -g renumber-windows on
 set -g default-terminal "${TERM}"
 set -g terminal-overrides ",*:RGB"
 set -as terminal-features "xterm-256color:RGB"
+
+####################################################
+# Gruvbox Dark Color Palette
+####################################################
+set -g @gb_bg "#282828"
+set -g @gb_bg_alt "#3c3836"
+set -g @gb_fg "#ebdbb2"
+set -g @gb_fg_dim "#928374"
+set -g @gb_blue "#83a598"
+set -g @gb_green "#b8bb26"
+set -g @gb_yellow "#fabd2f"
+set -g @gb_red "#fb4934"
+set -g @gb_purple "#d3869b"
+set -g @gb_orange "#fe8019"
+
+####################################################
+# Status Bar Design (Evil Style)
+####################################################
+
 set-option -g status-position top
+set -g status-style "bg=#{@gb_bg},fg=#{@gb_fg}"
+set -g status-justify left
 
-set -g @tokyo-night-tmux_show_git 1             # local git status
-set -g @tokyo-night-tmux_show_wbg 0             # GitHub / GitLab stats
-set -g @tokyo-night-tmux_show_netspeed 0        # network speed
-set -g @tokyo-night-tmux_show_battery_widget 0  # battery level
-set -g @tokyo-night-tmux_show_music 0           # now playing
-set -g @tokyo-night-tmux_show_path 0            # current path
-set -g @tokyo-night-tmux_show_hostname 0        # machine hostname
-set -g @tokyo-night-tmux_show_datetime 1
+# --- Left Side (Spacing) ---
+set -g status-left " #[fg=#{@gb_blue}]  "
+set -g status-left-length 20
 
-# Optional: reorder the right status bar (default order shown)
-# set -g @tokyo-night-tmux_show_right_widgets "path, git, datetime"
+# --- Windows List ---
+# Inactiva
+set -g window-status-format "#[fg=#{@gb_fg_dim}]#I:#W "
+# Ventana Activa con indicador de Zoom
+set -g window-status-current-format "#[bold]  #W #{?window_zoomed_flag,󰊓 ,}"
+set -g window-status-current-style "#{?window_zoomed_flag,fg=#{@gb_orange},fg=#{@gb_blue}}" 
+
+# --- Right Side (Git & Session) ---
+# Mostrando Rama de Git y Nombre de Sesión
+set -g status-right-length 60
+set -g status-right "#[fg=#{@gb_fg_dim}] #(cd #{pane_current_path} 2>/dev/null && git rev-parse --abbrev-ref HEAD 2>/dev/null || echo 'none') #[fg=#{@gb_fg_dim}]| #[fg=#{@gb_blue},bold]󰇄 #S "
+
+####################################################
+# Panes & Selection
+####################################################
+set -g pane-border-style "fg=#{@gb_bg_alt}"
+set -g pane-active-border-style "fg=#{@gb_orange}"
+
+# Mensajes de comando
+set -g message-style "bg=#{@gb_orange},fg=#{@gb_bg},bold"
 
 ####################################################
 # Navigation & Keys
@@ -93,7 +127,6 @@ set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
 set -g @plugin 'christoomey/vim-tmux-navigator'
 set -g @plugin 'tmux-plugins/tmux-yank'
-set -g @plugin "janoamaral/tokyo-night-tmux"
 
 # Inicialización de TPM
 run '~/.tmux/plugins/tpm/tpm'
