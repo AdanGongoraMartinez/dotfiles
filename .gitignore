@@ -1,0 +1,26 @@
+# Datos generados/estado
+
+.config/fish/fish_variables
+.config/fish/fish_variables.*
+
+# LazyVim (lazy-lock = versiones de plugins específicas de la máquina)
+
+.config/nvim/lazy-lock.json
+.config/nvim/lazyvim.json
+
+# Backups completos de configs antiguas
+
+.config/nvim.bak/
+
+# Archivos de backup/temporales
+
+*.bak
+*.cat.bak
+*.backup*
+*.dmsbackup*
+*.orig
+*.rej
+*.swp
+*.swo
+*~
+.DS_Store

@@ -1,0 +1,13 @@
+^\.git$
+
+^PROGRAMS\.md$
+^\.gitignore$
+^\.stow-local-ignore$
+^README.*$
+^LICENSE.*$
+
+^\.config/fish/fish_variables.*$
+
+^.*\.bak$
+^.*\.swp$
+^.*~$
