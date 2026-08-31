@@ -1,6 +1,6 @@
 window-decoration = none
-theme = Gruvbox Dark 
+theme = TokyoNight 
 font-family = "JetBrainsMono Nerd Font"
 font-size = 15
 window-padding-x = 10
-window-padding-y = 10,5
+window-padding-y = 10
