@@ -5,6 +5,7 @@ end-of-line-diagnostics = "hint"
 line-number = "relative"
 cursorline = true
 color-modes = true
+rulers = [80]
 
 [editor.cursor-shape]
 insert = "bar"
